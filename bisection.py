@@ -4,6 +4,22 @@ def f(x):
   return x * math.e**x - 5 # Root [1, 2]
   # return math.e**-x - math.sin((math.pi * x) / 2) # Root [1, 2]
 
+def get_interval():
+  intervals = [-math.inf, math.inf]
+  for x in range(-5, 5):
+    a, b = intervals
+    f_x = f(x)
+    
+    if f_x < 0 and f_x > a:
+      intervals[0] = x
+      continue
+    
+    if f_x > 0 and f_x < b:
+      intervals[1] = x
+      continue
+    
+  return intervals
+
 def get_root(i, interval: list[int]) -> float:
   lower_limit = interval[0]
   upper_limit = interval[1]
@@ -26,4 +42,5 @@ def get_root(i, interval: list[int]) -> float:
   
   return middle_point
 
-print(get_root(1, [1, 2]))
+interval = get_interval()
+print(get_root(1, interval))
