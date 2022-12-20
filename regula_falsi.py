@@ -1,7 +1,5 @@
 def f(x):
-  return (x**3) - 2 * x - 5 # Root [1.4, 1.5]
-  # return (x**6) - (x**4) - (x**3) - 1 # Root [1.4, 1.5]
-  # return 2*x**3 + x - 2 # Root [0, 1]
+  return (x**3) - 2 * x - 5
 
 i = 0
 def get_roots(last_answer, interval: list[int]) -> float:
